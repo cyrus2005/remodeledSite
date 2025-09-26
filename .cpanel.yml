@@ -1,0 +1,18 @@
+---
+deployment:
+  tasks:
+    - export: public_html/
+    - export: public_html/assets/
+    - export: public_html/assets/css/
+    - export: public_html/assets/js/
+    - export: public_html/assets/fonts/
+    - export: public_html/assets/media/
+    - export: public_html/contact-email.php
+    - export: public_html/contact-handler.php
+    - export: public_html/test-db.php
+    - export: public_html/test-email-form.html
+    - export: public_html/test-form.html
+    - export: public_html/robots.txt
+    - export: public_html/security.txt
+    - export: public_html/sitemap.xml
+    - export: public_html/.htaccess

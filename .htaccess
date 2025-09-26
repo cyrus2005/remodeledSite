@@ -1,0 +1,109 @@
+# Apache Configuration for Cyrus Portfolio Site
+# Security and Performance Optimizations
+
+# Enable mod_rewrite
+RewriteEngine On
+
+# Security Headers
+<IfModule mod_headers.c>
+    # Security Headers
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "DENY"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    
+    # Remove Server Information
+    Header unset Server
+    Header unset X-Powered-By
+</IfModule>
+
+# Force HTTPS (uncomment if SSL is available)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Remove www (optional - uncomment if you want to remove www)
+# RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+# RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# Custom Error Pages
+ErrorDocument 404 /index.html
+ErrorDocument 500 /index.html
+
+# Cache Control for Static Assets
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # Images
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    
+    # CSS and JavaScript
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    
+    # Fonts
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    
+    # HTML
+    ExpiresByType text/html "access plus 1 hour"
+</IfModule>
+
+# Compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# Prevent access to sensitive files
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|inc|bak|sql)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Block access to PHP files in root (except contact handlers)
+<FilesMatch "^(?!contact-email\.php|contact-handler\.php|test-db\.php).*\.php$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Prevent directory browsing
+Options -Indexes
+
+# Hide server information
+ServerTokens Prod
+
+# MIME Types
+<IfModule mod_mime.c>
+    AddType application/font-woff .woff
+    AddType application/font-woff2 .woff2
+    AddType image/svg+xml .svg
+</IfModule>
+
+# SPA Routing - Redirect all requests to index.html for client-side routing
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/assets/
+RewriteCond %{REQUEST_URI} !^/contact-email\.php$
+RewriteCond %{REQUEST_URI} !^/contact-handler\.php$
+RewriteCond %{REQUEST_URI} !^/test-db\.php$
+RewriteCond %{REQUEST_URI} !^/robots\.txt$
+RewriteCond %{REQUEST_URI} !^/security\.txt$
+RewriteCond %{REQUEST_URI} !^/sitemap\.xml$
+RewriteRule ^(.*)$ /index.html [L]
