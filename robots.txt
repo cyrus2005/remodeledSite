@@ -1,0 +1,15 @@
+
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+Disallow: /.well-known/
+
+# Security
+Allow: /.well-known/security.txt
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://cyruswilburn.dev/sitemap.xml

@@ -1,0 +1,6 @@
+
+Contact: mailto:c.wilburn@cyruswilburn.dev
+Preferred-Languages: en
+Canonical: https://cyruswilburn.dev/.well-known/security.txt
+Policy: https://cyruswilburn.dev/security-policy
+Acknowledgments: https://cyruswilburn.dev/security-acknowledgments

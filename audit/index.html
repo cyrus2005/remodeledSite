@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Website Audit - Cyrus Wilburn</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#8B1538',secondary:'#DC2626'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link href="fonts/inter.css" rel="stylesheet">
+<link href="css/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body { font-family: 'Inter', sans-serif; }
+</style>
+</head>
+<body class="bg-white">
+<header class="bg-white border-b border-gray-100 sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-16">
+<div class="flex items-center">
+<span class="text-2xl font-bold text-gray-900">Cyrus Wilburn</span>
+</div>
+<nav class="hidden md:flex space-x-8">
+<a href="#audit-benefits" class="text-gray-600 hover:text-primary transition-colors">What You'll Get</a>
+<a href="#pricing" class="text-gray-600 hover:text-primary transition-colors">Pricing</a>
+<a href="#quiz-preview" class="text-gray-600 hover:text-primary transition-colors">Quiz Preview</a>
+<a href="#about-cyrus" class="text-gray-600 hover:text-primary transition-colors">About</a>
+</nav>
+<a href="form.html" class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-red-800 transition-colors whitespace-nowrap inline-block">
+Start Free Audit
+</a>
+</div>
+</div>
+</header>
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden" style="background-image: url('media/sitePhotos/backgroundimagehero.jpg'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-white bg-opacity-90"></div>
+<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<div class="text-left">
+<h1 class="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+Get Your Website <span class="text-primary">Audit</span> in 30 Seconds
+</h1>
+<p class="text-xl text-gray-600 mb-8 leading-relaxed">
+Discover what's holding your website back from converting visitors into customers. Get actionable insights and performance recommendations tailored to your business.
+</p>
+<div class="flex flex-col sm:flex-row gap-4 mb-8">
+<a href="form.html" class="bg-primary text-white px-8 py-4 !rounded-button text-lg font-semibold hover:bg-red-800 transition-colors whitespace-nowrap text-center inline-block">
+Start My Free Audit
+</a>
+<a href="quiz.html" class="border-2 border-gray-300 text-gray-700 px-8 py-4 !rounded-button text-lg font-semibold hover:border-primary hover:text-primary transition-colors whitespace-nowrap text-center inline-block">
+Take Quiz
+</a>
+</div>
+<div class="flex items-center gap-6 text-sm text-gray-500">
+<div class="flex items-center gap-2">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-check-line text-secondary"></i>
+</div>
+<span>100% Free</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-time-line text-secondary"></i>
+</div>
+<span>30 Second Quiz</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-shield-check-line text-secondary"></i>
+</div>
+<span>No Spam</span>
+</div>
+</div>
+</div>
+<div class="hidden lg:block">
+<div class="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
+<div class="text-center mb-6">
+<div class="w-20 h-20 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+<div class="w-10 h-10 flex items-center justify-center">
+<i class="ri-user-line text-3xl text-primary"></i>
+</div>
+</div>
+<h3 class="text-2xl font-bold text-gray-900 mb-2">Ready to Get Started?</h3>
+<p class="text-gray-600">Choose how you'd like to connect with me</p>
+</div>
+<div class="space-y-4">
+<a href="https://cyruswilburn.dev" target="_blank" class="w-full bg-primary text-white px-6 py-4 !rounded-button font-semibold hover:bg-red-800 transition-colors whitespace-nowrap text-center block">
+<div class="flex items-center justify-center gap-3">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-external-link-line"></i>
+</div>
+Visit My Portfolio
+</div>
+</a>
+<button onclick="showScheduleForm()" class="w-full border-2 border-primary text-primary px-6 py-4 !rounded-button font-semibold hover:bg-primary hover:text-white transition-colors whitespace-nowrap">
+<div class="flex items-center justify-center gap-3">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-calendar-line"></i>
+</div>
+Schedule Consultation
+</div>
+</button>
+</div>
+<div class="mt-6 pt-6 border-t border-gray-100">
+<div class="flex items-center justify-center gap-4 text-sm text-gray-500">
+<div class="flex items-center gap-2">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-phone-line text-secondary"></i>
+</div>
+<span>Free 15-min call</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-time-line text-secondary"></i>
+</div>
+<span>Same day response</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Trusted by Industry Leaders</h2>
+<p class="text-gray-600 text-lg">Join other businesses that have improved their website performance</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-60">
+<div class="flex items-center justify-center">
+<div class="w-8 h-8 flex items-center justify-center mr-3">
+<i class="ri-microsoft-fill text-3xl"></i>
+</div>
+<span class="text-xl font-semibold text-gray-700">Microsoft</span>
+</div>
+<div class="flex items-center justify-center">
+<div class="w-8 h-8 flex items-center justify-center mr-3">
+<i class="ri-google-fill text-3xl"></i>
+</div>
+<span class="text-xl font-semibold text-gray-700">Google</span>
+</div>
+<div class="flex items-center justify-center">
+<div class="w-8 h-8 flex items-center justify-center mr-3">
+<i class="ri-amazon-fill text-3xl"></i>
+</div>
+<span class="text-xl font-semibold text-gray-700">Amazon</span>
+</div>
+<div class="flex items-center justify-center">
+<div class="w-8 h-8 flex items-center justify-center mr-3">
+<i class="ri-apple-fill text-3xl"></i>
+</div>
+<span class="text-xl font-semibold text-gray-700">Apple</span>
+</div>
+</div>
+</div>
+</section>
+<section id="audit-benefits" class="py-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">What You'll Discover</h2>
+<p class="text-xl text-gray-600">Get actionable insights that drive real results</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+<div class="w-16 h-16 bg-primary bg-opacity-10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-speed-line text-2xl text-primary"></i>
+</div>
+</div>
+<h3 class="text-2xl font-bold text-gray-900 mb-4">Performance Issues</h3>
+<p class="text-gray-600 leading-relaxed">Identify slow loading pages, broken links, and technical problems that are driving visitors away from your site.</p>
+</div>
+<div class="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+<div class="w-16 h-16 bg-secondary bg-opacity-10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-bar-chart-line text-2xl text-secondary"></i>
+</div>
+</div>
+<h3 class="text-2xl font-bold text-gray-900 mb-4">Conversion Blockers</h3>
+<p class="text-gray-600 leading-relaxed">Uncover hidden barriers preventing visitors from becoming customers and learn how to optimize your conversion funnel.</p>
+</div>
+<div class="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+<div class="w-16 h-16 bg-orange-500 bg-opacity-10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-lightbulb-line text-2xl text-orange-500"></i>
+</div>
+</div>
+<h3 class="text-2xl font-bold text-gray-900 mb-4">Actionable Recommendations</h3>
+<p class="text-gray-600 leading-relaxed">Receive specific, prioritized action items you can implement immediately to improve your website's performance.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="pricing" class="py-20 bg-primary">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<div class="bg-white rounded-3xl p-12 shadow-2xl">
+<div class="inline-flex items-center bg-secondary bg-opacity-10 text-secondary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+<div class="w-4 h-4 flex items-center justify-center mr-2">
+<i class="ri-gift-line"></i>
+</div>
+Limited Time Offer
+</div>
+<h2 class="text-4xl font-bold text-gray-900 mb-4">FREE Website Audit</h2>
+<div class="text-6xl font-bold text-primary mb-2">$0</div>
+<p class="text-gray-500 text-lg mb-8">Usually $297 - Free for a limited time</p>
+<div class="grid md:grid-cols-2 gap-6 mb-8 text-left">
+<div class="flex items-start gap-3">
+<div class="w-5 h-5 flex items-center justify-center mt-1">
+<i class="ri-check-line text-secondary"></i>
+</div>
+<span class="text-gray-700">Comprehensive performance analysis</span>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-5 h-5 flex items-center justify-center mt-1">
+<i class="ri-check-line text-secondary"></i>
+</div>
+<span class="text-gray-700">SEO optimization recommendations</span>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-5 h-5 flex items-center justify-center mt-1">
+<i class="ri-check-line text-secondary"></i>
+</div>
+<span class="text-gray-700">Conversion rate optimization tips</span>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-5 h-5 flex items-center justify-center mt-1">
+<i class="ri-check-line text-secondary"></i>
+</div>
+<span class="text-gray-700">Mobile responsiveness check</span>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-5 h-5 flex items-center justify-center mt-1">
+<i class="ri-check-line text-secondary"></i>
+</div>
+<span class="text-gray-700">Security vulnerability assessment</span>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-5 h-5 flex items-center justify-center mt-1">
+<i class="ri-check-line text-secondary"></i>
+</div>
+<span class="text-gray-700">Personalized action plan</span>
+</div>
+</div>
+<a href="form.html" class="bg-primary text-white px-12 py-4 !rounded-button text-xl font-bold hover:bg-red-800 transition-colors whitespace-nowrap w-full md:w-auto inline-block">
+Claim Your Free Audit Now
+</a>
+</div>
+</div>
+</section>
+<section id="quiz-preview" class="py-20 bg-gray-50">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Quick Quiz Preview</h2>
+<p class="text-xl text-gray-600">See what questions you'll answer in our 30-second audit quiz</p>
+</div>
+<div class="bg-white rounded-2xl shadow-lg p-8 max-w-3xl mx-auto">
+<div class="space-y-6">
+<div class="border-l-4 border-primary pl-6">
+<h3 class="font-semibold text-gray-900 mb-2">Question 1 of 5</h3>
+<p class="text-gray-700">What's your website's primary goal?</p>
+<div class="mt-3 space-y-2">
+<label class="flex items-center gap-3 cursor-pointer">
+<div class="w-4 h-4 rounded-full border-2 border-gray-300"></div>
+<span class="text-gray-600">Generate leads</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<div class="w-4 h-4 rounded-full border-2 border-primary bg-primary"></div>
+<span class="text-gray-600">Sell products online</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<div class="w-4 h-4 rounded-full border-2 border-gray-300"></div>
+<span class="text-gray-600">Build brand awareness</span>
+</label>
+</div>
+</div>
+<div class="border-l-4 border-gray-200 pl-6 opacity-50">
+<h3 class="font-semibold text-gray-900 mb-2">Question 2 of 5</h3>
+<p class="text-gray-700">How much traffic does your website receive monthly?</p>
+</div>
+<div class="border-l-4 border-gray-200 pl-6 opacity-30">
+<h3 class="font-semibold text-gray-900 mb-2">Question 3 of 5</h3>
+<p class="text-gray-700">What's your biggest website challenge?</p>
+</div>
+</div>
+<div class="mt-8 text-center">
+<a href="quiz.html" class="bg-primary text-white px-8 py-3 !rounded-button font-semibold hover:bg-red-800 transition-colors whitespace-nowrap inline-block">
+Start the Real Quiz
+</a>
+</div>
+</div>
+</div>
+</section>
+<section id="about-cyrus" class="py-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div>
+<img src="media/me/personalImage.png" alt="Cyrus at work" class="w-4/5 h-96 object-cover object-center rounded-2xl shadow-lg mx-auto">
+</div>
+<div>
+<h2 class="text-4xl font-bold text-gray-900 mb-6">Meet Cyrus Wilburn</h2>
+<p class="text-xl text-gray-600 mb-6 leading-relaxed">
+With over 8 years of experience in web development and digital marketing, I've helped businesses transform their online presence and dramatically increase their conversion rates.
+</p>
+<div class="space-y-4 mb-8">
+<div class="flex items-center gap-4">
+<div class="w-6 h-6 bg-primary bg-opacity-10 rounded-full flex items-center justify-center">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+</div>
+<span class="text-gray-700">Certified Google Analytics & Ads Expert</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-6 h-6 bg-primary bg-opacity-10 rounded-full flex items-center justify-center">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+</div>
+<span class="text-gray-700">Successful Website Optimizations for Businesses</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-6 h-6 bg-primary bg-opacity-10 rounded-full flex items-center justify-center">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+</div>
+<span class="text-gray-700">Average 40% Conversion Rate Improvement</span>
+</div>
+</div>
+<div class="flex gap-4">
+<a href="form.html" class="bg-primary text-white px-6 py-3 !rounded-button font-semibold hover:bg-red-800 transition-colors whitespace-nowrap inline-block">
+Get My Free Audit
+</a>
+<a href="https://cyruswilburn.dev" target="_blank" class="border-2 border-gray-300 text-gray-700 px-6 py-3 !rounded-button font-semibold hover:border-primary hover:text-primary transition-colors whitespace-nowrap inline-block">
+Visit Portfolio
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-gray-900">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<div class="mb-8">
+<div class="inline-flex items-center bg-red-500 bg-opacity-10 text-red-400 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+<div class="w-4 h-4 flex items-center justify-center mr-2">
+<i class="ri-time-line"></i>
+</div>
+Limited Time Only
+</div>
+<h2 class="text-4xl font-bold text-white mb-4">Don't Let Another Day Pass</h2>
+<p class="text-xl text-gray-300 mb-8">
+Every day your website isn't optimized, you're losing potential customers and revenue. Take action now and discover what's holding your business back.
+</p>
+</div>
+<div class="bg-white rounded-2xl p-8 shadow-2xl">
+<div class="grid md:grid-cols-3 gap-6 mb-8">
+<div class="text-center">
+<div class="text-3xl font-bold text-primary mb-2">73%</div>
+<p class="text-gray-600">of visitors leave slow websites</p>
+</div>
+<div class="text-center">
+<div class="text-3xl font-bold text-primary mb-2">2.5x</div>
+<p class="text-gray-600">higher conversion with optimization</p>
+</div>
+<div class="text-center">
+<div class="text-3xl font-bold text-primary mb-2">$42</div>
+<p class="text-gray-600">ROI for every $1 spent on UX</p>
+</div>
+</div>
+<a href="quiz.html" class="bg-primary text-white px-12 py-4 !rounded-button text-xl font-bold hover:bg-red-800 transition-colors whitespace-nowrap w-full md:w-auto inline-block">
+Start My 30-Second Audit
+</a>
+<p class="text-sm text-gray-500 mt-4">No credit card required • Results in 24 hours</p>
+</div>
+</div>
+</section>
+<footer class="bg-gray-50 py-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid md:grid-cols-4 gap-8">
+<div class="col-span-2">
+<h3 class="text-2xl font-bold text-gray-900 mb-4">Cyrus Wilburn</h3>
+<p class="text-gray-600 mb-4">
+Helping businesses optimize their websites for maximum performance and conversions.
+</p>
+<div class="flex gap-4">
+<a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-linkedin-fill"></i>
+</div>
+</a>
+<a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-twitter-fill"></i>
+</div>
+</a>
+<a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-github-fill"></i>
+</div>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-4">Services</h4>
+<ul class="space-y-2 text-gray-600">
+<li><a href="#" class="hover:text-primary transition-colors">Website Audits</a></li>
+<li><a href="#" class="hover:text-primary transition-colors">Performance Optimization</a></li>
+<li><a href="#" class="hover:text-primary transition-colors">Conversion Rate Optimization</a></li>
+<li><a href="#" class="hover:text-primary transition-colors">SEO Consulting</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-4">Contact</h4>
+<ul class="space-y-2 text-gray-600">
+<li>C.wilburn@cyruswilburn.dev</li>
+<li>+1 (270) 801-9780</li>
+<li>Houston, TX</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-200 mt-8 pt-8 text-center text-gray-500">
+<p>&copy; 2025 Cyrus Wilburn. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script id="cta-buttons">
+document.addEventListener('DOMContentLoaded', function() {
+const allButtons = document.querySelectorAll('button');
+allButtons.forEach(button => {
+if (button.textContent.includes('Start') || button.textContent.includes('Claim') || button.textContent.includes('Get')) {
+button.addEventListener('click', function() {
+window.location.href = 'Website-Audit-Form-Page.html';
+});
+}
+});
+});
+</script>
+<script id="smooth-scroll">
+document.addEventListener('DOMContentLoaded', function() {
+const links = document.querySelectorAll('a[href^="#"]');
+links.forEach(link => {
+link.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href').substring(1);
+const targetElement = document.getElementById(targetId);
+if (targetElement) {
+targetElement.scrollIntoView({
+behavior: 'smooth',
+block: 'start'
+});
+}
+});
+});
+});
+</script>
+<script id="quiz-preview">
+document.addEventListener('DOMContentLoaded', function() {
+const radioButtons = document.querySelectorAll('.quiz-preview input[type="radio"]');
+radioButtons.forEach(radio => {
+radio.addEventListener('change', function() {
+const parent = this.closest('label');
+const circle = parent.querySelector('.w-4.h-4');
+document.querySelectorAll('.w-4.h-4.rounded-full').forEach(c => {
+c.classList.remove('bg-primary', 'border-primary');
+c.classList.add('border-gray-300');
+});
+circle.classList.remove('border-gray-300');
+circle.classList.add('bg-primary', 'border-primary');
+});
+});
+});
+</script>
+
+<script id="schedule-form">
+function showScheduleForm() {
+const modal = document.createElement('div');
+modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
+modal.innerHTML = `
+<div class="bg-white rounded-2xl p-8 max-w-md w-full max-h-[90vh] overflow-y-auto">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-2xl font-bold text-gray-900">Schedule Consultation</h3>
+<button onclick="closeScheduleForm()" class="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-gray-600">
+<i class="ri-close-line text-xl"></i>
+</button>
+</div>
+<form id="schedule-consultation-form">
+<div class="space-y-4">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+<input type="text" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+<input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+<input type="tel" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Website URL</label>
+<input type="url" name="website" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Preferred Time</label>
+<select name="preferred_time" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm pr-8">
+<option value="">Select preferred time</option>
+<option value="morning">Morning (9 AM - 12 PM)</option>
+<option value="afternoon">Afternoon (12 PM - 5 PM)</option>
+<option value="evening">Evening (5 PM - 8 PM)</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">What can I help you with? *</label>
+<textarea name="message" required maxlength="500" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm resize-none" placeholder="Briefly describe your website goals or challenges..."></textarea>
+<div class="text-right text-xs text-gray-500 mt-1">
+<span id="char-count">0</span>/500 characters
+</div>
+</div>
+</div>
+<div class="flex gap-3 mt-6">
+<button type="button" onclick="closeScheduleForm()" class="flex-1 border-2 border-gray-300 text-gray-700 px-6 py-3 !rounded-button font-semibold hover:border-gray-400 transition-colors whitespace-nowrap">
+Cancel
+</button>
+<button type="submit" class="flex-1 bg-primary text-white px-6 py-3 !rounded-button font-semibold hover:bg-red-800 transition-colors whitespace-nowrap">
+Send Request
+</button>
+</div>
+</form>
+</div>
+`;
+document.body.appendChild(modal);
+
+const textarea = modal.querySelector('textarea[name="message"]');
+const charCount = modal.querySelector('#char-count');
+textarea.addEventListener('input', function() {
+charCount.textContent = this.value.length;
+if (this.value.length > 500) {
+this.value = this.value.substring(0, 500);
+charCount.textContent = 500;
+}
+});
+
+const form = modal.querySelector('#schedule-consultation-form');
+form.addEventListener('submit', function(e) {
+e.preventDefault();
+const formData = new FormData(this);
+
+const submitButton = this.querySelector('button[type="submit"]');
+submitButton.textContent = 'Sending...';
+submitButton.disabled = true;
+
+setTimeout(() => {
+closeScheduleForm();
+showSuccessMessage();
+}, 1500);
+});
+}
+
+function closeScheduleForm() {
+const modal = document.querySelector('.fixed.inset-0');
+if (modal) {
+modal.remove();
+}
+}
+
+function showSuccessMessage() {
+const successModal = document.createElement('div');
+successModal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
+successModal.innerHTML = `
+<div class="bg-white rounded-2xl p-8 max-w-md w-full text-center">
+<div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+<i class="ri-check-line text-3xl text-green-600"></i>
+</div>
+<h3 class="text-2xl font-bold text-gray-900 mb-2">Request Sent!</h3>
+<p class="text-gray-600 mb-6">Thank you for your interest. I'll get back to you within 24 hours to schedule our consultation.</p>
+<button onclick="this.closest('.fixed').remove()" class="bg-primary text-white px-6 py-3 !rounded-button font-semibold hover:bg-red-800 transition-colors whitespace-nowrap">
+Close
+</button>
+</div>
+`;
+document.body.appendChild(successModal);
+}
+</script>
+</body>
+</html>

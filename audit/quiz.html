@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Audit Quiz - Cyrus Wilburn</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#8B1538',secondary:'#DC2626'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link href="fonts/inter.css" rel="stylesheet">
+<link href="css/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body { font-family: 'Inter', sans-serif; }
+.custom-radio {
+appearance: none;
+width: 1.25rem;
+height: 1.25rem;
+border: 2px solid #d1d5db;
+border-radius: 50%;
+position: relative;
+cursor: pointer;
+transition: all 0.2s;
+}
+.custom-radio:checked {
+border-color: #8B1538;
+background-color: #8B1538;
+}
+.custom-radio:checked::after {
+content: '';
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 6px;
+height: 6px;
+background-color: white;
+border-radius: 50%;
+}
+.custom-radio:hover {
+border-color: #8B1538;
+}
+.custom-checkbox {
+appearance: none;
+width: 1.25rem;
+height: 1.25rem;
+border: 2px solid #d1d5db;
+border-radius: 4px;
+position: relative;
+cursor: pointer;
+transition: all 0.2s;
+}
+.custom-checkbox:checked {
+border-color: #8B1538;
+background-color: #8B1538;
+}
+.custom-checkbox:checked::after {
+content: '✓';
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: white;
+font-size: 12px;
+font-weight: bold;
+}
+</style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+<header class="bg-white border-b border-gray-100 sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-16">
+<div class="flex items-center">
+<span class="text-2xl font-bold text-gray-900">Cyrus Wilburn</span>
+</div>
+<nav class="hidden md:flex space-x-8">
+<a href="form.html" class="text-gray-600 hover:text-primary transition-colors">Full Audit Form</a>
+<a href="#about" class="text-gray-600 hover:text-primary transition-colors">About</a>
+<a href="#services" class="text-gray-600 hover:text-primary transition-colors">Services</a>
+<a href="#testimonials" class="text-gray-600 hover:text-primary transition-colors">Testimonials</a>
+<a href="#contact" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+</nav>
+<a href="index.html" class="bg-gray-100 text-gray-700 px-6 py-2 !rounded-button hover:bg-gray-200 transition-colors whitespace-nowrap">
+Back to Home
+</a>
+</div>
+</div>
+</header>
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+<div class="mb-8">
+<div class="flex items-center justify-between mb-4">
+<h1 class="text-2xl font-bold text-gray-900">Website Audit Quiz</h1>
+<span class="text-sm text-gray-500" id="step-counter">Step 1 of 5</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full transition-all duration-300" id="progress-bar" style="width: 20%"></div>
+</div>
+</div>
+<div id="quiz-container">
+<div id="question-1" class="question-step">
+<h2 class="text-3xl font-bold text-gray-900 mb-6">What's your website URL?</h2>
+<div class="mb-8">
+<input type="url" id="website-url" placeholder="Enter your website URL (e.g., www.yoursite.com)" class="w-full px-4 py-4 border border-gray-300 rounded-lg text-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors">
+<p class="text-sm text-gray-500 mt-2">We'll analyze this URL to provide personalized recommendations</p>
+<div class="mt-4">
+<label class="flex items-center gap-3 cursor-pointer">
+<input type="checkbox" id="no-website" class="custom-checkbox">
+<span class="text-gray-700">I don't have a website yet</span>
+</label>
+</div>
+</div>
+</div>
+<div id="question-2" class="question-step hidden">
+<h2 class="text-3xl font-bold text-gray-900 mb-6">What's your primary business goal?</h2>
+<div class="space-y-4 mb-8">
+<label class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:border-primary transition-colors cursor-pointer">
+<input type="radio" name="business-goal" value="generate-leads" class="custom-radio">
+<div>
+<div class="font-semibold text-gray-900">Generate Leads</div>
+<div class="text-sm text-gray-500">Capture contact information from potential customers</div>
+</div>
+</label>
+<label class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:border-primary transition-colors cursor-pointer">
+<input type="radio" name="business-goal" value="sell-products" class="custom-radio">
+<div>
+<div class="font-semibold text-gray-900">Sell Products Online</div>
+<div class="text-sm text-gray-500">Direct e-commerce sales and transactions</div>
+</div>
+</label>
+<label class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:border-primary transition-colors cursor-pointer">
+<input type="radio" name="business-goal" value="brand-awareness" class="custom-radio">
+<div>
+<div class="font-semibold text-gray-900">Build Brand Awareness</div>
+<div class="text-sm text-gray-500">Increase visibility and brand recognition</div>
+</div>
+</label>
+<label class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:border-primary transition-colors cursor-pointer">
+<input type="radio" name="business-goal" value="provide-information" class="custom-radio">
+<div>
+<div class="font-semibold text-gray-900">Provide Information</div>
+<div class="text-sm text-gray-500">Share content and educate visitors</div>
+</div>
+</label>
+</div>
+</div>
+<div id="question-3" class="question-step hidden">
+<h2 class="text-3xl font-bold text-gray-900 mb-6">How much traffic does your website receive monthly?</h2>
+<div class="mb-8">
+<div class="relative">
+<select id="traffic-volume" class="w-full px-4 py-4 pr-8 border border-gray-300 rounded-lg text-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors appearance-none bg-white">
+<option value="">Select your monthly traffic range</option>
+<option value="0-1000">Less than 1,000 visitors</option>
+<option value="1000-5000">1,000 - 5,000 visitors</option>
+<option value="5000-10000">5,000 - 10,000 visitors</option>
+<option value="10000-25000">10,000 - 25,000 visitors</option>
+<option value="25000-50000">25,000 - 50,000 visitors</option>
+<option value="50000+">More than 50,000 visitors</option>
+</select>
+<div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-down-s-line text-gray-400"></i>
+</div>
+</div>
+</div>
+<p class="text-sm text-gray-500 mt-2">This helps us understand your current reach and optimization potential</p>
+</div>
+</div>
+<div id="question-4" class="question-step hidden">
+<h2 class="text-3xl font-bold text-gray-900 mb-6">What are your main website challenges?</h2>
+<p class="text-gray-600 mb-6">Select all that apply to your current situation</p>
+<div class="space-y-4 mb-8">
+<label class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:border-primary transition-colors cursor-pointer">
+<input type="checkbox" name="challenges" value="slow-loading" class="custom-checkbox">
+<div>
+<div class="font-semibold text-gray-900">Slow Loading Speed</div>
+<div class="text-sm text-gray-500">Pages take too long to load</div>
+</div>
+</label>
+<label class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:border-primary transition-colors cursor-pointer">
+<input type="checkbox" name="challenges" value="low-conversions" class="custom-checkbox">
+<div>
+<div class="font-semibold text-gray-900">Low Conversion Rates</div>
+<div class="text-sm text-gray-500">Visitors aren't taking desired actions</div>
+</div>
+</label>
+<label class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:border-primary transition-colors cursor-pointer">
+<input type="checkbox" name="challenges" value="poor-seo" class="custom-checkbox">
+<div>
+<div class="font-semibold text-gray-900">Poor Search Rankings</div>
+<div class="text-sm text-gray-500">Not appearing in search results</div>
+</div>
+</label>
+<label class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:border-primary transition-colors cursor-pointer">
+<input type="checkbox" name="challenges" value="mobile-issues" class="custom-checkbox">
+<div>
+<div class="font-semibold text-gray-900">Mobile Responsiveness</div>
+<div class="text-sm text-gray-500">Poor mobile user experience</div>
+</div>
+</label>
+<label class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:border-primary transition-colors cursor-pointer">
+<input type="checkbox" name="challenges" value="outdated-design" class="custom-checkbox">
+<div>
+<div class="font-semibold text-gray-900">Outdated Design</div>
+<div class="text-sm text-gray-500">Website looks old or unprofessional</div>
+</div>
+</label>
+<label class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:border-primary transition-colors cursor-pointer">
+<input type="checkbox" name="challenges" value="high-bounce-rate" class="custom-checkbox">
+<div>
+<div class="font-semibold text-gray-900">High Bounce Rate</div>
+<div class="text-sm text-gray-500">Visitors leave quickly without engaging</div>
+</div>
+</label>
+</div>
+</div>
+<div id="question-5" class="question-step hidden">
+<h2 class="text-3xl font-bold text-gray-900 mb-6">Contact Information</h2>
+<p class="text-gray-600 mb-6">We'll send your personalized audit report to this email address</p>
+<div class="space-y-6 mb-8">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+<input type="text" id="full-name" placeholder="Enter your full name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+<input type="email" id="email-address" placeholder="Enter your email address" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Phone Number (Optional)</label>
+<input type="tel" id="phone-number" placeholder="Enter your phone number" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Company Name (Optional)</label>
+<input type="text" id="company-name" placeholder="Enter your company name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors">
+</div>
+</div>
+</div>
+<div id="completion-page" class="hidden text-center">
+<div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+<div class="w-10 h-10 flex items-center justify-center">
+<i class="ri-check-line text-3xl text-green-600"></i>
+</div>
+</div>
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Thank You!</h2>
+<p class="text-xl text-gray-600 mb-8">Your website audit request has been submitted successfully.</p>
+<div class="bg-gray-50 rounded-2xl p-8 mb-8">
+<h3 class="text-2xl font-bold text-gray-900 mb-4">What Happens Next?</h3>
+<div class="space-y-4 text-left max-w-2xl mx-auto">
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+<span class="text-primary font-bold text-sm">1</span>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900">Comprehensive Analysis</h4>
+<p class="text-gray-600">Our team will conduct a thorough audit of your website, analyzing performance, SEO, user experience, and conversion optimization opportunities.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+<span class="text-primary font-bold text-sm">2</span>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900">Personalized Report</h4>
+<p class="text-gray-600">You'll receive a detailed report with specific recommendations tailored to your business goals and current challenges.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+<span class="text-primary font-bold text-sm">3</span>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900">Implementation Guidance</h4>
+<p class="text-gray-600">Get prioritized action items you can implement immediately to improve your website's performance and conversions.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-primary bg-opacity-5 border border-primary border-opacity-20 rounded-2xl p-6 mb-8">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-time-line text-primary"></i>
+</div>
+<h4 class="font-semibold text-gray-900">Timeline</h4>
+</div>
+<p class="text-gray-700">You'll receive your detailed website audit report within <strong>24-48 hours</strong> via email.</p>
+</div>
+<a href="index.html" class="bg-primary text-white px-8 py-3 !rounded-button font-semibold hover:bg-red-800 transition-colors whitespace-nowrap inline-block">
+Return to Home
+</a>
+</div>
+</div>
+<div class="flex justify-between items-center pt-8 border-t border-gray-200">
+<button id="prev-btn" class="px-6 py-3 border border-gray-300 text-gray-700 !rounded-button font-semibold hover:border-primary hover:text-primary transition-colors whitespace-nowrap hidden">
+Previous
+</button>
+<div class="flex-1"></div>
+<button id="next-btn" class="bg-primary text-white px-8 py-3 !rounded-button font-semibold hover:bg-red-800 transition-colors whitespace-nowrap disabled:bg-gray-300 disabled:cursor-not-allowed" disabled>
+Next
+</button>
+</div>
+</div>
+</div>
+<footer class="bg-gray-50 py-12 mt-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid md:grid-cols-4 gap-8">
+<div class="col-span-2">
+<h3 class="text-2xl font-bold text-gray-900 mb-4">Cyrus Wilburn</h3>
+<p class="text-gray-600 mb-4">
+Helping businesses optimize their websites for maximum performance and conversions.
+</p>
+<div class="flex gap-4">
+<a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-linkedin-fill"></i>
+</div>
+</a>
+<a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-twitter-fill"></i>
+</div>
+</a>
+<a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-github-fill"></i>
+</div>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-4">Services</h4>
+<ul class="space-y-2 text-gray-600">
+<li><a href="#" class="hover:text-primary transition-colors">Website Audits</a></li>
+<li><a href="#" class="hover:text-primary transition-colors">Performance Optimization</a></li>
+<li><a href="#" class="hover:text-primary transition-colors">Conversion Rate Optimization</a></li>
+<li><a href="#" class="hover:text-primary transition-colors">SEO Consulting</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-4">Contact</h4>
+<ul class="space-y-2 text-gray-600">
+<li>hello@cyruswilburn.dev</li>
+<li>+1 (555) 123-4567</li>
+<li>San Francisco, CA</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-200 mt-8 pt-8 text-center text-gray-500">
+<p>&copy; 2025 Cyrus Wilburn. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script id="quiz-navigation">
+document.addEventListener('DOMContentLoaded', function() {
+let currentStep = 1;
+const totalSteps = 5;
+const nextBtn = document.getElementById('next-btn');
+const prevBtn = document.getElementById('prev-btn');
+const progressBar = document.getElementById('progress-bar');
+const stepCounter = document.getElementById('step-counter');
+function updateProgress() {
+const percentage = (currentStep / totalSteps) * 100;
+progressBar.style.width = percentage + '%';
+stepCounter.textContent = `Step ${currentStep} of ${totalSteps}`;
+}
+function showStep(step) {
+document.querySelectorAll('.question-step').forEach(el => el.classList.add('hidden'));
+document.getElementById(`question-${step}`).classList.remove('hidden');
+prevBtn.classList.toggle('hidden', step === 1);
+if (step === totalSteps) {
+nextBtn.textContent = 'Complete Audit';
+} else {
+nextBtn.textContent = 'Next';
+}
+}
+function validateStep(step) {
+switch(step) {
+case 1:
+const url = document.getElementById('website-url').value.trim();
+const noWebsite = document.getElementById('no-website').checked;
+return noWebsite || (url.length > 0 && (url.includes('.') || url.includes('http')));
+case 2:
+return document.querySelector('input[name="business-goal"]:checked') !== null;
+case 3:
+return document.getElementById('traffic-volume').value !== '';
+case 4:
+return document.querySelectorAll('input[name="challenges"]:checked').length > 0;
+case 5:
+const name = document.getElementById('full-name').value.trim();
+const email = document.getElementById('email-address').value.trim();
+return name.length > 0 && email.includes('@') && email.includes('.');
+default:
+return true;
+}
+}
+function updateNextButton() {
+nextBtn.disabled = !validateStep(currentStep);
+}
+nextBtn.addEventListener('click', function() {
+if (currentStep < totalSteps) {
+currentStep++;
+showStep(currentStep);
+updateProgress();
+updateNextButton();
+} else {
+document.getElementById('quiz-container').classList.add('hidden');
+document.getElementById('completion-page').classList.remove('hidden');
+nextBtn.classList.add('hidden');
+prevBtn.classList.add('hidden');
+}
+});
+prevBtn.addEventListener('click', function() {
+if (currentStep > 1) {
+currentStep--;
+showStep(currentStep);
+updateProgress();
+updateNextButton();
+}
+});
+document.getElementById('website-url').addEventListener('input', updateNextButton);
+document.getElementById('no-website').addEventListener('change', function() {
+if (this.checked) {
+document.getElementById('website-url').disabled = true;
+document.getElementById('website-url').value = '';
+document.getElementById('website-url').classList.add('bg-gray-100');
+} else {
+document.getElementById('website-url').disabled = false;
+document.getElementById('website-url').classList.remove('bg-gray-100');
+}
+updateNextButton();
+});
+document.getElementById('traffic-volume').addEventListener('change', updateNextButton);
+document.getElementById('full-name').addEventListener('input', updateNextButton);
+document.getElementById('email-address').addEventListener('input', updateNextButton);
+document.querySelectorAll('input[name="business-goal"]').forEach(radio => {
+radio.addEventListener('change', function() {
+updateNextButton();
+});
+});
+
+document.querySelectorAll('input[name="business-goal"]').forEach(radio => {
+radio.addEventListener('click', function() {
+updateNextButton();
+});
+});
+document.querySelectorAll('input[name="challenges"]').forEach(checkbox => {
+checkbox.addEventListener('change', updateNextButton);
+});
+updateNextButton();
+});
+</script>
+</body>
+</html>
