@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -99,3 +100,106 @@
     </script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Contact Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 50px auto; padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, select, textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; }
+        button { background: #7f1d1d; color: white; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #991b1b; }
+        .result { margin-top: 20px; padding: 15px; border-radius: 4px; }
+        .success { background: #d1fae5; color: #065f46; border: 1px solid #a7f3d0; }
+        .error { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+    </style>
+</head>
+<body>
+    <h1>Test Contact Form</h1>
+    <p>This form will test the PHP handler with your database.</p>
+    
+    <form id="testForm">
+        <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="company">Company Name</label>
+            <input type="text" id="company" name="company">
+        </div>
+        
+        <div class="form-group">
+            <label for="budget">Project Budget</label>
+            <select id="budget" name="budget">
+                <option value="">Select budget range</option>
+                <option value="150-300">$150 - $300</option>
+                <option value="300-500">$300 - $500</option>
+                <option value="500-750">$500 - $750</option>
+                <option value="750-1000">$750 - $1,000</option>
+                <option value="1000-1500">$1,000 - $1,500</option>
+                <option value="1500-plus">$1,500+</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="timeline">Timeline</label>
+            <select id="timeline" name="timeline">
+                <option value="">Select timeline</option>
+                <option value="asap">ASAP</option>
+                <option value="1-2-weeks">1-2 weeks</option>
+                <option value="1-month">1 month</option>
+                <option value="2-3-months">2-3 months</option>
+                <option value="flexible">Flexible</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="message">Project Details *</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        
+        <button type="submit">Send Test Message</button>
+    </form>
+    
+    <div id="result"></div>
+    
+    <script>
+        document.getElementById('testForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const resultDiv = document.getElementById('result');
+            
+            try {
+                const response = await fetch('/contact-handler.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    resultDiv.innerHTML = '<div class="result success">✅ ' + result.message + '</div>';
+                    this.reset();
+                } else {
+                    resultDiv.innerHTML = '<div class="result error">❌ ' + result.message + '</div>';
+                }
+            } catch (error) {
+                resultDiv.innerHTML = '<div class="result error">❌ Error: ' + error.message + '</div>';
+            }
+        });
+    </script>
+</body>
+</html>
+>>>>>>> 5c915cac2092880da9506c7def4999e43e2d6958
