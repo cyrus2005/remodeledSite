@@ -3,6 +3,7 @@ deployment:
   tasks:
     - export: source: /
       target: /
+    - /bin/rm -rf public_html/*
     - /bin/cp -f .htaccess public_html/
     - /bin/cp -f php.ini public_html/
     - /bin/cp -f robots.txt public_html/
