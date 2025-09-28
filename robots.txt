@@ -1,0 +1,37 @@
+User-agent: *
+Allow: /
+
+# Allow search engines to index all pages
+Allow: /index.php
+Allow: /audit/
+Allow: /audit/index.php
+Allow: /audit/audit-form.php
+Allow: /audit/quiz.php
+
+# Allow access to assets
+Allow: /assets/
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
+
+# Disallow access to sensitive files
+Disallow: /.htaccess
+Disallow: /php.ini
+Disallow: /robots.txt
+Disallow: /README.md
+Disallow: /audit/.htaccess
+Disallow: /audit/php.ini
+Disallow: /audit/robots.txt
+Disallow: /audit/README.md
+
+# Disallow access to backup and temporary files
+Disallow: /*.bak$
+Disallow: /*.tmp$
+Disallow: /*.log$
+Disallow: /*.sql$
+
+# Crawl delay (optional - adjust based on server capacity)
+Crawl-delay: 1
+
+# Sitemap location (update with your actual domain)
+Sitemap: https://cyruswilburn.dev/sitemap.xml

@@ -1,0 +1,33 @@
+---
+deployment:
+  tasks:
+    - export: source: /
+      target: /
+    - /bin/cp -f .htaccess public_html/
+    - /bin/cp -f php.ini public_html/
+    - /bin/cp -f robots.txt public_html/
+    - /bin/cp -f sitemap.xml public_html/
+    - /bin/cp -f README.md public_html/
+    - /bin/cp -rf assets/ public_html/
+    - /bin/cp -rf audit/ public_html/
+    - /bin/cp -f index.php public_html/
+    - /bin/chmod 644 public_html/.htaccess
+    - /bin/chmod 644 public_html/php.ini
+    - /bin/chmod 644 public_html/robots.txt
+    - /bin/chmod 644 public_html/sitemap.xml
+    - /bin/chmod 644 public_html/README.md
+    - /bin/chmod 644 public_html/index.php
+    - /bin/chmod -R 755 public_html/assets/
+    - /bin/chmod -R 755 public_html/audit/
+    - /bin/chmod 644 public_html/assets/css/*.css
+    - /bin/chmod 644 public_html/assets/js/*.js
+    - /bin/chmod 644 public_html/assets/fonts/*.ttf
+    - /bin/chmod 644 public_html/assets/fonts/*.woff2
+    - /bin/chmod 644 public_html/assets/fonts/*.woff
+    - /bin/chmod 644 public_html/assets/images/*
+    - /bin/chmod 644 public_html/assets/css/fontawesome/webfonts/*
+    - /bin/chmod 644 public_html/audit/*.php
+    - /bin/chmod 644 public_html/audit/.htaccess
+    - /bin/chmod 644 public_html/audit/php.ini
+    - /bin/chmod 644 public_html/audit/robots.txt
+    - /bin/chmod 644 public_html/audit/README.md
